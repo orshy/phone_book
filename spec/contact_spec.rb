@@ -40,4 +40,14 @@ describe(Contact) do
       expect(Contact.all()).to(eq([]))
     end
   end
+
+  describe(".find") do
+    it("finds the contact by id") do
+      test_contact = Contact.new("Jenny")
+      test_contact.save()
+      test_contact2 = Contact.new("Benny")
+      test_contact2.save()
+      expect(Contact.find(test_contact.id())).to(eq(test_contact))
+    end
+  end
 end

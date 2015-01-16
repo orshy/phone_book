@@ -27,4 +27,14 @@ class Contact
   define_singleton_method(:clear) do
     @@contacts = []
   end
+
+  define_singleton_method(:find) do |find_contact_name|
+    found_contact_name = nil
+    @@contacts.each() do |contact|
+      if contact.id() == find_contact_name
+        found_contact_name = contact
+      end
+    end
+    found_contact_name
+  end
 end
