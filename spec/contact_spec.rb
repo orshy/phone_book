@@ -32,4 +32,12 @@ describe(Contact) do
       expect(Contact.all()).to(eq([test_contact]))
     end
   end
+
+  describe(".clear") do
+    it("clears out all the contacts from the array") do
+      test_contact = Contact.new("Jenny").save()
+      Contact.clear()
+      expect(Contact.all()).to(eq([]))
+    end
+  end
 end
