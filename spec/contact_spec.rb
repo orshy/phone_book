@@ -1,5 +1,6 @@
 require('rspec')
 require('contact')
+require('phone')
 require('pry')
 
 describe(Contact) do
@@ -13,7 +14,7 @@ describe(Contact) do
   describe("#contact_name") do
     it("returns the contact name") do
       test_contact = Contact.new("Jenny")
-      exepct(test_contact.contact_name()).to(eq("Jenny"))
+      expect(test_contact.contact_name()).to(eq("Jenny"))
     end
   end
 end

@@ -15,3 +15,4 @@ class Contact
   define_singleton_method(:all) do
     @@contacts
   end
+end
