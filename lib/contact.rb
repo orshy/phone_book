@@ -15,4 +15,8 @@ class Contact
   define_singleton_method(:all) do
     @@contacts
   end
+
+  define_method(:id) do
+    @id
+  end
 end
