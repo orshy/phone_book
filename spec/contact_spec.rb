@@ -24,4 +24,12 @@ describe(Contact) do
       expect(test_contact.id()).to(eq(1))
     end
   end
+
+  describe("#save") do
+    it("saves contact entry into array") do
+      test_contact = Contact.new("Jenny")
+      test_contact.save()
+      expect(Contact.all()).to(eq([test_contact]))
+    end
+  end
 end

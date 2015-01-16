@@ -19,4 +19,8 @@ class Contact
   define_method(:id) do
     @id
   end
+
+  define_method(:save) do
+    @@contacts.push(self)
+  end
 end
