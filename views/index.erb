@@ -11,7 +11,7 @@
   <p>no contacts in phone book.</p>
 <% else @contacts.each() do |contact| %>
   <ul>
-    <li><a href="/contacts/<%= contact.id() %>"><%= contact.contact_name() %></a></li>
+    <li><a href="/contacts/<%= contact.id() %>"><%= contact.contact_name().capitalize %></a></li>
   </ul>
   <% end %>
 <% end %>

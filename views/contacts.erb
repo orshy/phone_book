@@ -1,4 +1,4 @@
-<h1><small><%= @contacts.contact_name() %></small></h1>
+<h1><small><%= @contacts.contact_name().capitalize %></small></h1>
 <hr>
 
 <form action="/phone_numbers" method="post">
@@ -17,10 +17,10 @@
 
 <br><br>
   <% if @contacts.phone_number() == [] %>
-  <p>There are currently no numbers stored.</p>
+  <p><small>(no contact numbers currently stored)</small></p>
   <% else @contacts.phone_number().each() do |phone_object| %>
 <ul>
-  <li><%= phone_object.phone_type() %> <%= phone_object.phone_number() %></li>
+  <li><%= phone_object.phone_type().capitalize %> <%= phone_object.phone_number() %></li>
 </ul>
 <% end %>
 <% end %>
