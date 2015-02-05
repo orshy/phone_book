@@ -1,1 +1,12 @@
 <h1><%= @contacts.contact_name() %></h1>
+
+<form action="/phone_numbers" method="post">
+  <input id='contact_id' name='contact_id' type='hidden' value='<%= @contacts.id() %>'>
+  <label for='phone_number'>Phone #</label>
+  <input id='phone_number' name='phone_number' type='text' required>
+  <br>
+  <label for='phone_type'>What type of phone # (mobile, work, home)</label>
+  <input id='phone_type' name='phone_type' type='text'>
+  <br>
+  <button type='submit' class='btn btn-primary'>Add Contact Number</button>
+<form>
