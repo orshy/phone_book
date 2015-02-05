@@ -8,7 +8,7 @@
   <form>
   <br><br>
 <% if @contacts == [] %>
-  <p>There are currently no contacts stored.</p>
+  <p>no contacts in phone book.</p>
 <% else @contacts.each() do |contact| %>
   <ul>
     <li><a href="/contacts/<%= contact.id() %>"><%= contact.contact_name() %></a></li>

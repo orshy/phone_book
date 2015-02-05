@@ -16,3 +16,9 @@ post('/contacts') do
   @contacts = Contact.all()
   erb(:index)
 end
+
+get('/contacts/:id') do
+  @contacts = Contact.find(params.fetch('id').to_i())
+  @numbers = Phone.all()
+  erb(:contacts)
+end
