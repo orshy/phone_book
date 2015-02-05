@@ -10,8 +10,17 @@
   <input id='phone_type' name='phone_type' type='text'>
   <button type='submit' class='btn btn-primary'>Add Contact Number</button>
 <form>
-
 <hr>
 <hr>
 
 <a href='/'>Back to Phone Book</a>
+
+<br><br>
+  <% if @contacts.phone_number() == [] %>
+  <p>There are currently no numbers stored.</p>
+  <% else @contacts.phone_number().each() do |phone_object| %>
+<ul>
+  <li><%= phone_object.phone_type() %> <%= phone_object.phone_number() %></li>
+</ul>
+<% end %>
+<% end %>

@@ -22,3 +22,14 @@ get('/contacts/:id') do
   @numbers = Phone.all()
   erb(:contacts)
 end
+
+post('/phone_numbers') do
+  @phone_number = params.fetch('phone_number')
+  @phone_type = params.fetch('phone_type')
+  Phone.new({:phone_number => @phone_number, :phone_type => @phone_type}).save()
+  @phone_number_new = Phone.new({:phone_number => @phone_number, :phone_type => @phone_type})
+  @contacts = Contact.find(params.fetch('contact_id').to_i())
+  @contacts.add_phone(@phone_number_new)
+  @phone_numbers = Phone.all()
+  erb(:contacts)
+end
