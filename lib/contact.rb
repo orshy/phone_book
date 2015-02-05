@@ -1,13 +1,12 @@
 class Contact
 
+  attr_reader(:contact_name, :id, :phone_number)
   @@contacts = []
 
-  attr_reader(:name, :color)
-
-  define_method (:initialize) do |contact_name|
-    @contact_name = contact_name
-    @phone_numbers = []
-    @id = @@contacts.length().+1
+  define_method (:initialize) do |attributes|
+    @contact_name = attributes.fetch(:contact_name)
+    @phone_number = []
+    @id = @@contacts.length().+(1)
   end
 
   define_singleton_method(:all) do
@@ -15,7 +14,7 @@ class Contact
   end
 
   define_method(:add_phone) do |phone|
-    @@contacts.push(vehicle)
+    @phone_number.push(phone)
   end
 
   define_method(:id) do

@@ -1,26 +1,12 @@
 class Phone
 
+  attr_reader(:phone_number, :phone_type, :id)
   @@digits = []
 
-  define_method(:initialize) do |home_phone, work_phone, cell_phone|
-    @home_phone = home
-    @work_phone = work
-    @cell_phone = cell
+  define_method(:initialize) do |attributes|
+    @phone_number = attributes.fetch(:phone_number)
+    @phone_type = attributes.fetch(:phone_type)
     @id = @@digits.length().+(1)
-  end
-
-  define_method(:home) do
-    @home
-  end
-
-  define_method(:work) do
-  end
-
-  define_method(:cell) do
-  end
-
-  define_method(:id) do
-    @id
   end
 
   define_singleton_method(:all) do
@@ -36,12 +22,10 @@ class Phone
   end
 
   define_singleton_method(:find) do |name|
-    found_number = nil
     @@digits.each() do |phone|
-      if phone.id().eql(name())
-        found_phone = phone
+      if phone.id().eql?(name)
+        return phone
       end
     end
-    found_phone
   end
 end
